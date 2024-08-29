@@ -47,7 +47,7 @@ namespace CarBook.WebApi.Controllers
         public async Task<IActionResult> RemoveAbout(int id)
         {
             await _removeAboutCommandHandler.Handle(new RemoveAboutCommand(id));
-            return.OK("Hakkımda silme işlemi başarılı.");
+            return Ok("Hakkımda silme işlemi başarılı.");
         }
         [HttpPut]
         public async Task<IActionResult> UpdateAbout(UpdateAboutCommand command)
