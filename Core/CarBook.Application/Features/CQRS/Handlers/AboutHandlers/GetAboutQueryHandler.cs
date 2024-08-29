@@ -18,11 +18,11 @@ namespace CarBook.Application.Features.CQRS.Handlers.AboutHandlers
             _repository = repository;
         }
         
-        public async Task<List<GetAboutByIdQueryResult>> Handle()
+        public async Task<List<GetAboutQueryResult>> Handle()
         {
             var values = await _repository.GetAllAsync();
             return
-                   values.Select(x => new GetAboutByIdQueryResult
+                   values.Select(x => new GetAboutQueryResult
                    {
                        AboutID = x.AboutID,
                        Description = x.Description,
