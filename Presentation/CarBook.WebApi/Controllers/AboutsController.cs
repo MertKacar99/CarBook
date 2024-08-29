@@ -55,10 +55,6 @@ namespace CarBook.WebApi.Controllers
             await _updateAboutCommandHandler.Handle(command);
             return Ok("Hakkımda işlemi güncellendi");
         }
-        public void deneme()
-        {
-            int sayi = 2 + 2;
-            int sayi = 2 + 21;
-        }
+     
     }
 }
