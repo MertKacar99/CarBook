@@ -1,4 +1,6 @@
 ﻿using CarBook.Application.Interfaces;
+using CarBook.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
@@ -10,31 +12,43 @@ namespace CarBook.Persistence.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        
+        private readonly CarBookContext _carBookContext;
 
-        Task IRepository<T>.CreateAsync(T entity)
+        public Repository(CarBookContext carBookContext)
         {
-            throw new NotImplementedException();
+            _carBookContext = carBookContext;
         }
 
-        Task IRepository<T>.DeleteAsync(int id)
+        public async Task CreateAsync(T entity)
         {
-            throw new NotImplementedException();
+            _carBookContext.Set<T>().Add(entity);
+            await _carBookContext.SaveChangesAsync();
         }
 
-        Task<List<T>> IRepository<T>.GetAllAsync()
+      
+        public Task<List<T>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return _carBookContext.Set<T>().ToListAsync();
         }
 
-        Task<T> IRepository<T>.GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+          
+            return await _carBookContext.Set<T>().FindAsync(id);
+              
+               
         }
 
-        Task IRepository<T>.UpdateAsync(T entity)
+        public async Task RemoveAsync(T entity)
         {
-            throw new NotImplementedException();
+           _carBookContext.Set<T>().Remove(entity);
+            await _carBookContext.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(T entity)
+        {
+            _carBookContext.Set<T>().Update(entity);
+            await _carBookContext.SaveChangesAsync();
         }
     }
 }
