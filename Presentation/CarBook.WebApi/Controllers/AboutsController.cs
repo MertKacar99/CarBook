@@ -58,6 +58,7 @@ namespace CarBook.WebApi.Controllers
         public void deneme()
         {
             int sayi = 2 + 2;
+            int sayi = 2 + 21;
         }
     }
 }
