@@ -8,7 +8,7 @@ namespace UdemyCarBook.Domain.Entitites
 {
     public class Location
     {
-        public int LocaitonId { get; set; }
+        public int LocationID { get; set; }
         public string Name { get; set; }
     }
 }
