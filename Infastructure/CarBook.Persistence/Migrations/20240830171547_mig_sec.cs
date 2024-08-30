@@ -5,7 +5,7 @@
 namespace CarBook.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class migfirst : Migration
+    public partial class mig_sec : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -31,9 +31,9 @@ namespace CarBook.Persistence.Migrations
                 {
                     BannerId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    VideDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    VideoDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     VideoUrl = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
