@@ -56,9 +56,6 @@ namespace CarBook.WebApi.Controllers
             return Ok("Hakkımda işlemi güncellendi");
         }
         
-        public void getir()
-        {
-            int sayi = 2 + 2;
-        }
+       
     }
 }
