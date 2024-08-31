@@ -44,7 +44,7 @@ namespace CarBook.WebApi.Controllers
         public async Task<IActionResult> CreateBanner(CreateBannerCommand command)
         {
             await _createBannerCommandHandler.Handle(command);
-            return Ok("Bilgi bilgisi Eklendii");
+            return Ok("Bilgi bilgisi Eklendi");
         }
         [HttpDelete]
         public async Task<IActionResult> RemoveBanner(int id)
