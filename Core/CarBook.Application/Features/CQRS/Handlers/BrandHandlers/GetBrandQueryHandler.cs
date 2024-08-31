@@ -19,15 +19,15 @@ namespace CarBook.Application.Features.CQRS.Handlers.BrandHandlers
             _repository = repository;
         }
 
-        public async Task <List<GetBrandQueryResult>> Handle()
+        public async Task<List<GetBrandQueryResult>> Handle()
         {
             var values = await _repository.GetAllAsync();
 
             return
                 values.Select(x => new GetBrandQueryResult
                 {
-                   BrandID=x.BrandID,
-                   Name = x.Name
+                    BrandID = x.BrandID,
+                    Name = x.Name
 
 
 

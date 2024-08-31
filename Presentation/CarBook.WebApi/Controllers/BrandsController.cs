@@ -46,20 +46,20 @@ namespace CarBook.WebApi.Controllers
         public async Task<IActionResult> CreateBrand(CreateBrandCommand command)
         {
             await _createBrandCommandHandler.Handle(command);
-            return Ok("Brand Eklendi.");
+            return Ok("Marka Eklendi.");
         }
         
         [HttpDelete]
         public async Task<IActionResult> RemoveBrand(int id)
         {
             await _removeBrandCommandHandler.Handle(new RemoveBrandCommand(id));
-            return Ok("Brand silme işlemi başarılı");
+            return Ok("Marka silme işlemi başarılı");
         }
         [HttpPut]
         public async Task<IActionResult> UpdateBrand(UpdateBrandCommand command)
         {
             await   _updateBrandCommandHandler.Handle(command);
-            return Ok("Brand güncellendi");
+            return Ok("Marka güncellendi");
         }
 
 
