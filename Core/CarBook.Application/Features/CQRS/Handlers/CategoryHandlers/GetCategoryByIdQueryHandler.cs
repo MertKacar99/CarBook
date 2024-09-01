@@ -26,9 +26,9 @@ namespace CarBook.Application.Features.CQRS.Handlers.CategoryHandlers
             _repository = repository;
         }
 
-        public async Task<GetCategoryByIdQueryResult> Handle(GetCategoryByIdQuery getCategoryByIdQuery)
+        public async Task<GetCategoryByIdQueryResult> Handle(GetCategoryByIdQuery query)
         {
-            var values = await _repository.GetByIdAsync(getCategoryByIdQuery.Id);
+            var values = await _repository.GetByIdAsync(query.Id);
 
             return new GetCategoryByIdQueryResult()
             {
