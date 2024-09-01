@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Domain.Entitites
+namespace CarBook.Application.Features.Mediator.Results.FooterAddressResults
 {
-    public class FooterAdress
+    public class GetFooterAddressQueryResult
     {
-        public int FooterAdressID   { get; set; }
+    public int FooterAddressID { get; set; }
         public string Description { get; set; }
         public string Adress { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-
     }
 }

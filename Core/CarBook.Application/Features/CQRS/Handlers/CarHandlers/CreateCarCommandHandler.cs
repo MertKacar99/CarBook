@@ -20,12 +20,12 @@ namespace CarBook.Application.Features.CQRS.Handlers.CarHandlers
         {
             await _repository.CreateAsync(new Car
             {
+                BrandID = createCarCommand.BrandID,
                 BigImageUrl = createCarCommand.BigImageUrl,
                 Luggage = createCarCommand.Luggage,
                 Km=createCarCommand.Km,
                 Model = createCarCommand.Model,
                 Seat = createCarCommand.Seat,
-                BrandID = createCarCommand.BrandID,
                 Transmission = createCarCommand.Transmission,
                 Fuel = createCarCommand.Fuel,
                 CoverImageUrl = createCarCommand.CoverImageUrl

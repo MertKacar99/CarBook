@@ -5,7 +5,7 @@
 namespace CarBook.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class RenameProperty : Migration
+    public partial class mig_first : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -98,10 +98,10 @@ namespace CarBook.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FooterAdresses",
+                name: "FooterAddresses",
                 columns: table => new
                 {
-                    FooterAdressID = table.Column<int>(type: "int", nullable: false)
+                    FooterAddressID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Adress = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -110,7 +110,7 @@ namespace CarBook.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FooterAdresses", x => x.FooterAdressID);
+                    table.PrimaryKey("PK_FooterAddresses", x => x.FooterAddressID);
                 });
 
             migrationBuilder.CreateTable(
@@ -342,7 +342,7 @@ namespace CarBook.Persistence.Migrations
                 name: "Contacts");
 
             migrationBuilder.DropTable(
-                name: "FooterAdresses");
+                name: "FooterAddresses");
 
             migrationBuilder.DropTable(
                 name: "Locations");

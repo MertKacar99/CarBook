@@ -286,13 +286,13 @@ namespace CarBook.Persistence.Migrations
                     b.ToTable("Features");
                 });
 
-            modelBuilder.Entity("UdemyCarBook.Domain.Entitites.FooterAdress", b =>
+            modelBuilder.Entity("UdemyCarBook.Domain.Entitites.FooterAddress", b =>
                 {
-                    b.Property<int>("FooterAdressID")
+                    b.Property<int>("FooterAddressID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FooterAdressID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FooterAddressID"));
 
                     b.Property<string>("Adress")
                         .IsRequired()
@@ -310,9 +310,9 @@ namespace CarBook.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("FooterAdressID");
+                    b.HasKey("FooterAddressID");
 
-                    b.ToTable("FooterAdresses");
+                    b.ToTable("FooterAddresses");
                 });
 
             modelBuilder.Entity("UdemyCarBook.Domain.Entitites.Location", b =>
