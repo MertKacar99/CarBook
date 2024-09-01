@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarBook.Application.Features.Mediator.Queries.LocationQueries
 {
-    public class GetLocationByIdQuery : IRequest<GetLocationByIdResult>
+    public class GetLocationByIdQuery : IRequest<GetLocationByIdQueryResult>
     {
         public GetLocationByIdQuery(int id)
         {
