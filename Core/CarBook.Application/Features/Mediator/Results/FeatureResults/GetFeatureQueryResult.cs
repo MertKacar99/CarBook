@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Domain.Entitites
+namespace CarBook.Application.Features.Mediator.Results.FeatureResults
 {
-    public class Feature
+    public class GetFeatureQueryResult
     {
         public int FeatureID { get; set; }
         public string Name { get; set; }
-        public List<CarFeature> CarFeatures { get; set; }
-
     }
 }
