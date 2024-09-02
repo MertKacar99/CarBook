@@ -10,20 +10,21 @@ using UdemyCarBook.Domain.Entitites;
 
 namespace CarBook.Application.Features.Mediator.Handlers.ServiceHandlers
 {
-    public class RemoveServiceQueryHandler : IRequestHandler<RemoveServiceCommand>
+    public class UpdateServiceCommandHandler : IRequestHandler<UpdateServiceCommand>
     {
         private readonly IRepository<Service> _repository;
 
-        public RemoveServiceQueryHandler(IRepository<Service> repository)
+        public UpdateServiceCommandHandler(IRepository<Service> repository)
         {
             _repository = repository;
         }
 
-        public  async Task Handle(RemoveServiceCommand request, CancellationToken cancellationToken)
+        public async Task Handle(UpdateServiceCommand request, CancellationToken cancellationToken)
         {
-            var value = await _repository.GetByIdAsync(request.id);
-
-            await _repository.RemoveAsync(value);
+            var value = await _repository.GetByIdAsync(request.ServiceID);
+            value.Title = request.Title;
+            value.IconUrl = request.IconUrl;
+            await _repository.UpdateAsync(value);
         }
     }
 }

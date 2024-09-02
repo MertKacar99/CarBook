@@ -10,11 +10,11 @@ using UdemyCarBook.Domain.Entitites;
 
 namespace CarBook.Application.Features.Mediator.Handlers.PricingHandlers
 {
-    public class RemovePricingQueryHandler : IRequestHandler<RemovePricingCommand>
+    public class RemovePricingCommandHandler : IRequestHandler<RemovePricingCommand>
     {
         private readonly IRepository<Pricing> _repository;
 
-        public RemovePricingQueryHandler(IRepository<Pricing> repository)
+        public RemovePricingCommandHandler(IRepository<Pricing> repository)
         {
             _repository = repository;
         }
