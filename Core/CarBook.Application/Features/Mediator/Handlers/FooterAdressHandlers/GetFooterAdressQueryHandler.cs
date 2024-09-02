@@ -21,6 +21,7 @@ namespace CarBook.Application.Features.Mediator.Handlers.FooterAddressHandlers
             _repository = repository;
         }
 
+
         public async Task<List<GetFooterAddressQueryResult>> Handle(GetFooterAddressQuery request, CancellationToken cancellationToken)
         {
              var value =  await _repository.GetAllAsync();
