@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBook.Application.Features.Mediator.Results.ServiceResults
+namespace Carbook.Dto.ServiceDtos
 {
-    public class GetServiceGetByIdQueryResult
+    public class ResultServiceDto
     {
         public int ServiceID { get; set; }
         public string Title { get; set; }
