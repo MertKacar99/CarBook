@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarBook.Domain.Entitites;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,10 @@ namespace UdemyCarBook.Domain.Entitites
     {
         public int CategoryID { get; set; }
         public string Name { get; set; }
-    
-    
+        public List<Blog>  Blogs{ get; set; }
+
+
+
+
     }
 }
