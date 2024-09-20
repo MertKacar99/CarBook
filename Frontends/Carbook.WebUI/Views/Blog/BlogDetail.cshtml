@@ -7,7 +7,7 @@
 <section class="ftco-section ftco-degree-bg">
     <div class="container">
         <div class="row">
-            @await Component.InvokeAsync("_BlogDetailsMainComponentPartial")
+            @await Component.InvokeAsync("_BlogDetailsMainComponentPartial", new{id =ViewBag.blogid })
             <div class="col-md-4 sidebar ftco-animate">
                 @await Component.InvokeAsync("_BlogDetailsSideBarSearchBoxComponentPartial")
                 @await Component.InvokeAsync("_BlogDetailsCategoryViewComponentPartial")
