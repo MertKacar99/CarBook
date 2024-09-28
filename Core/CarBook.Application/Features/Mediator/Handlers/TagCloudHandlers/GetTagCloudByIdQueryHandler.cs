@@ -12,11 +12,11 @@ using UdemyCarBook.Domain.Entitites;
 
 namespace CarBook.Application.Features.Mediator.Handlers.TagCloudHandlers
 {
-    public class GetAuthorByIdQueryHandler : IRequestHandler<GetTagCloudByIdQuery, GetTagCloudByIdResult>
+    public class GetTagCloudByIdQueryHandler : IRequestHandler<GetTagCloudByIdQuery, GetTagCloudByIdResult>
     {
         private readonly IRepository<TagCloud> _repository;
 
-        public GetAuthorByIdQueryHandler(IRepository<TagCloud> repository)
+        public GetTagCloudByIdQueryHandler(IRepository<TagCloud> repository)
         {
             _repository = repository;
         }
