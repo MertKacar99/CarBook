@@ -30,6 +30,7 @@ namespace CarBook.WebApi.Controllers
             _RemoveCarCommandHandler = RemoveCarCommandHandler;
             _GetCarWithBrandCommandHandler = getCarWithBrandCommandHandler;
             _getLast5CarsWithBrandQueryHandler = getLast5CarsWithBrandQueryHandler;
+    
         }
 
         [HttpGet]
@@ -68,7 +69,7 @@ namespace CarBook.WebApi.Controllers
             return Ok("Araba güncellendi");
         }
         [HttpGet("GetCarWithBrand")]
-        public    IActionResult GetCarWithBrand()
+        public IActionResult GetCarWithBrand()
         {
             var value = _GetCarWithBrandCommandHandler.Handle();
             return Ok(value);
@@ -82,6 +83,6 @@ namespace CarBook.WebApi.Controllers
 
         }
 
-
+      
     }
 }

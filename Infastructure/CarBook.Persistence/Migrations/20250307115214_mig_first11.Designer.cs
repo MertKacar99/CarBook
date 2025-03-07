@@ -4,6 +4,7 @@ using CarBook.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarBook.Persistence.Migrations
 {
     [DbContext(typeof(CarBookContext))]
-    partial class CarBookContextModelSnapshot : ModelSnapshot
+    [Migration("20250307115214_mig_first11")]
+    partial class mig_first11
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -284,7 +287,11 @@ namespace CarBook.Persistence.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("CarID")
+                    b.Property<string>("CarID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CarID1")
                         .HasColumnType("int");
 
                     b.Property<int>("PricingID")
@@ -292,7 +299,7 @@ namespace CarBook.Persistence.Migrations
 
                     b.HasKey("CarPricingID");
 
-                    b.HasIndex("CarID");
+                    b.HasIndex("CarID1");
 
                     b.HasIndex("PricingID");
 
@@ -582,7 +589,7 @@ namespace CarBook.Persistence.Migrations
                 {
                     b.HasOne("UdemyCarBook.Domain.Entitites.Car", "Car")
                         .WithMany("CarPricings")
-                        .HasForeignKey("CarID")
+                        .HasForeignKey("CarID1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
