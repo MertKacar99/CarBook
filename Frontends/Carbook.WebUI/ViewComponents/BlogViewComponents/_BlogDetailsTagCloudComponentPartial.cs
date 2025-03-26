@@ -1,4 +1,5 @@
 ﻿using Carbook.Dto.BlogDtos;
+using Carbook.Dto.TagCloudDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -15,22 +16,17 @@ namespace Carbook.WebUI.ViewComponents.BlogViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync(int id)
         {
+            ViewBag.blogid = id;
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"http://localhost:5265/api/TagClouds//" + id);
+            var responseMessage = await client.GetAsync($"http://localhost:5265/api/TagClouds/GetTagCloudById?id=" + id);
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<GetBlogById>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<GetByBlogIdDto>>(jsonData);
                 return View(values);
 
             }
-            else
-            {
-                var errorMessage = await responseMessage.Content.ReadAsStringAsync();
-                Console.WriteLine("API Error: " + errorMessage);
-
-            }
-
+           
             return View();
 
         }

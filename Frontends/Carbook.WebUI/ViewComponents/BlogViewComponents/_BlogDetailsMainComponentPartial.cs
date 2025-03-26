@@ -23,13 +23,6 @@ namespace Carbook.WebUI.ViewComponents.BlogViewComponents
                 return View(values);
 
             }
-            else
-            {
-                var errorMessage = await responseMessage.Content.ReadAsStringAsync();
-                Console.WriteLine("API Error: " + errorMessage);
-
-            }
-
             return View();
 
         }
