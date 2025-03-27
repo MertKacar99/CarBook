@@ -19,7 +19,6 @@ namespace CarBook.Application.Features.Mediator.Handlers.BlogHandlers
         {
             _blogRepository = blogRepository;
         }
-
         public async Task<List<GetBlogByAuthorIdQueryResult>> Handle(GetBlogByAuthorIdQuery request, CancellationToken cancellationToken)
         {
             var value =   _blogRepository.GetBlogWithAuthorId(request.AuthorID);
