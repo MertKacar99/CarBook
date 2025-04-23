@@ -18,12 +18,18 @@ using CarBook.Persistence.Repositories.BlogRepositories;
 using CarBook.Persistence.Repositories.CarRepositories;
 using CarBook.Persistence.Repositories.CommentRepositories;
 using CarBook.Persistence.Repositories.TagCloudRepositories;
+using Microsoft.EntityFrameworkCore;
 using UdemyCarBook.Persistence.Repositories.CarPricingRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+//VERÝ TABANI BAÐLANTISI DEFAULT CONNECTÝON
+builder.Services.AddDbContext<CarBookContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
 // Add services to the container.
-builder.Services.AddScoped<CarBookContext>();
 builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
 builder.Services.AddScoped(typeof(ICarRepository),typeof(CarRepository));
 builder.Services.AddScoped(typeof(IBlogRepository),typeof(BlogRepository));

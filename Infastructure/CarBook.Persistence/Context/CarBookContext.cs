@@ -12,11 +12,15 @@ namespace CarBook.Persistence.Context
 {
     public class CarBookContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=MERT;initial Catalog=CarbookDb;integrated Security=true;TrustServerCertificate=true");
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseNpgsql("Host=cloud.mertkacar.com;Port=5432;Database=CarbookDb;Username=carbook_username;Password=seninSifren");
 
+        //}
+        public CarBookContext(DbContextOptions<CarBookContext> options) : base(options)
+        {
         }
+
         public DbSet<About> Abouts { get; set; }
         public DbSet<Banner> Banners { get; set; }
         public DbSet<Brand> Brands { get; set; }
