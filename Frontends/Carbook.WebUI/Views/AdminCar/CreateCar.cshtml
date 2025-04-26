@@ -1,0 +1,54 @@
+﻿@model CreateCarDto
+@{
+    ViewData["Title"] = "CreateCar";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+          
+               
+                        <div class="card">
+                            <div class="card-body">
+
+                                <h4 class="card-title">Yeni Araç Girişi</h4>
+                                <p class="card-subtitle mb-4">Araç ile iglili temel bilgileri eksiksiz doldurmanız önemlidir. Veri Girişlerinden sonra kaydet butonuna tıklayarak işlemi tamamlayabilirsiniz.</p>
+
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Marka</label>
+                           @*      @Html.DropDownListFor(m => m.BrandID, new SelectList(ViewBag.Brands, "Id", "Name"), "Marka Seçiniz", new { @class = "form-control" }) *@
+                                    @Html.DropDownListFor(m=> m.BrandID , (List<SelectListItem>)ViewBag.BrandValues ,"Marka Seçiniz ", new {@class="form-control"})              
+
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputModel">Model</label>
+                                    <input type="text" class="form-control" id="exampleInputModel" placeholder="Şifreniz">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="checkmeout0">
+                                            <label class="custom-control-label" for="checkmeout0">Check me out !</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                                </form>
+
+                            </div>  
+                        </div>  
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+ 
+
+
+
+
+
+                       
