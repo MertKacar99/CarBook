@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBook.Application.Features.CQRS.Commands.CarCommands
+namespace Carbook.Dto.CarDtos
 {
-    public class CreateCarCommand  
+    public class UpdateCarDto
     {
- 
+        public int CarId { get; set; }
         public int BrandID { get; set; }
         public string Model { get; set; }
         public string CoverImageUrl { get; set; }
