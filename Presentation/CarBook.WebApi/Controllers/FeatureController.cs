@@ -12,45 +12,40 @@ namespace CarBook.WebApi.Controllers
     {
         private readonly IMediator _mediator;
 
+  
         public FeatureController(IMediator mediator)
         {
             _mediator = mediator;
         }
-
         [HttpGet]
         public async Task<IActionResult> FeatureList()
         {
             var values = await _mediator.Send(new GetFeatureQuery());
             return Ok(values);
         }
-
-        [HttpPost("{id}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetFeature(int id)
         {
             var value = await _mediator.Send(new GetFeatureByIdQuery(id));
             return Ok(value);
         }
-
         [HttpPost]
         public async Task<IActionResult> CreateFeature(CreateFeatureCommand command)
         {
             await _mediator.Send(command);
-            return Ok("özellikler başarıyla eklendi.");
+            return Ok("Özellik başarıyla eklendi");
         }
-
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveFeature(int id)
         {
             await _mediator.Send(new RemoveFeatureCommand(id));
-            return Ok("Özellikle başarıyla silindi.");
+            return Ok("Özellik başarıyla silindi");
         }
-
         [HttpPut]
         public async Task<IActionResult> UpdateFeature(UpdateFeatureCommand command)
         {
             await _mediator.Send(command);
-            return Ok("Özellikler Başarıyla Güncellendi.");
+            return Ok("Özellik başarıyla güncellendi");
         }
-
     }
 }

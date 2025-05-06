@@ -17,7 +17,6 @@ namespace CarBook.Application.Features.Mediator.Handlers.FeatureHandlers
     public class GetFeatureByIdQueryHandler : IRequestHandler<GetFeatureByIdQuery,  GetFeatureByIdQueryResult>
     {
         private readonly IRepository<Feature> _repository;
-
         public GetFeatureByIdQueryHandler(IRepository<Feature> repository)
         {
             _repository = repository;
@@ -25,13 +24,11 @@ namespace CarBook.Application.Features.Mediator.Handlers.FeatureHandlers
 
         public async Task<GetFeatureByIdQueryResult> Handle(GetFeatureByIdQuery request, CancellationToken cancellationToken)
         {
-            var value = await _repository.GetByIdAsync(request.id);
-            return new GetFeatureByIdQueryResult()
+            var values = await _repository.GetByIdAsync(request.id);
+            return new GetFeatureByIdQueryResult
             {
-               FeatureID = value.FeatureID,
-               Name = value.Name,
-
-
+                FeatureID = values.FeatureID,
+                Name = values.Name
             };
         }
     }
