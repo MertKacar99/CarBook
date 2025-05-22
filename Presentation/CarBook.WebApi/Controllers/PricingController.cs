@@ -48,7 +48,7 @@ namespace CarBook.WebApi.Controllers
             return Ok("fiyat Silindi");
         }
 
-        [HttpPut]
+         
         public async Task<IActionResult> UpdatePricing(UpdatePricingCommand command)
         {
             await _mediator.Send(command);
