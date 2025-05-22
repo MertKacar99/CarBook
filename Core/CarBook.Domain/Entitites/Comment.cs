@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBook.Domain.Entitites
+namespace Carbook.Domain.Entitites
 {
     public class Comment
     {
         public int CommentID { get; set; }
         public string Name { get; set; }
         public string CreatedDate { get; set; }
+        public string Email { get; set; }
+
 
         public string Description { get; set; }
 

@@ -1,11 +1,11 @@
-﻿using CarBook.Domain.Entitites;
+﻿using Carbook.Domain.Entitites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Domain.Entitites
+namespace Carbook.Domain.Entitites
 {
     public class Category
     {

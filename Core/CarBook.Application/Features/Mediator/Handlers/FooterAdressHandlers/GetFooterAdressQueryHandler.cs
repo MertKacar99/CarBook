@@ -8,7 +8,7 @@ using CarBook.Application.Features.Mediator.Queries.FooterAddressQueries;
 using CarBook.Application.Features.Mediator.Results.FooterAddressResults;
 using CarBook.Application.Interfaces;
 using MediatR;
-using UdemyCarBook.Domain.Entitites;
+using Carbook.Domain.Entitites;
 
 namespace CarBook.Application.Features.Mediator.Handlers.FooterAddressHandlers
 {

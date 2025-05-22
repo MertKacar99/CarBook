@@ -6,7 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UdemyCarBook.Domain.Entitites;
+
+using Carbook.Domain.Entitites;
 
 namespace CarBook.Application.Features.Mediator.Handlers.TestimonialHandlers
 {

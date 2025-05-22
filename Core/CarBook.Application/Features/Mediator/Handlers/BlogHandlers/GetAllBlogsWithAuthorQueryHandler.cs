@@ -1,4 +1,5 @@
-﻿using CarBook.Application.Features.Mediator.Queries.BlogQueries;
+﻿using Carbook.Application.Features.Mediator.Results.BlogResults;
+using CarBook.Application.Features.Mediator.Queries.BlogQueries;
 using CarBook.Application.Features.Mediator.Results.BlogResults;
 using CarBook.Application.Interfaces.BlogInterfaces;
 using MediatR;

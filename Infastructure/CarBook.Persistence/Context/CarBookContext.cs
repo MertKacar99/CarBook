@@ -1,12 +1,16 @@
-﻿using CarBook.Domain.Entitites;
+﻿
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UdemyCarBook.Domain.Core;
-using UdemyCarBook.Domain.Entitites;
+using Carbook.Domain.Entitites;
+using Carbook.Domain.Core;
+using CarBook.Application.Interfaces.RentACarInterfaces;
+using CarBook.Application.Interfaces.ReviewInterfaces;
+using CarBook.Domain.Entities;
+using CarBook.Domain.Entitites;
 
 namespace CarBook.Persistence.Context
 {
@@ -19,6 +23,7 @@ namespace CarBook.Persistence.Context
         //}
         public CarBookContext(DbContextOptions<CarBookContext> options) : base(options)
         {
+
         }
 
         public DbSet<About> Abouts { get; set; }
@@ -41,5 +46,14 @@ namespace CarBook.Persistence.Context
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<TagCloud> TagClouds { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<RentACar> RentACars { get; set; }
+       
+        public DbSet<RentACarProcess> RentACarProcesses { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<AppRole> AppRoles { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
+
+
     }
 }

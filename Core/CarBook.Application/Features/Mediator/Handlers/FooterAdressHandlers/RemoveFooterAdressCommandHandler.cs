@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using CarBook.Application.Features.Mediator.Commands.FooterAddressCommands;
 using CarBook.Application.Interfaces;
 using MediatR;
-using UdemyCarBook.Domain.Entitites;
+using Carbook.Domain.Entitites;
 
 namespace CarBook.Application.Features.Mediator.Handlers.FooterAddressHandlers
 {

@@ -1,4 +1,5 @@
-﻿using CarBook.Application.Interfaces.CarInterfaces;
+﻿using Carbook.Domain.Entitites;
+using CarBook.Application.Interfaces.CarInterfaces;
 using CarBook.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UdemyCarBook.Domain.Entitites;
+ 
 
 namespace CarBook.Persistence.Repositories.CarRepositories
 {
@@ -17,6 +18,12 @@ namespace CarBook.Persistence.Repositories.CarRepositories
         public CarRepository(CarBookContext context)
         {
             _context = context;
+        }
+
+        public int GetCarCount()
+        {
+            var value = _context.Cars.Count();
+            return value;
         }
 
         public List<Car> GetCarsListWithBrands()

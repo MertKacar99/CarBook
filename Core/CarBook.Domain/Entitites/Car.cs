@@ -1,10 +1,12 @@
-﻿using System;
+﻿using CarBook.Domain.Entities;
+using CarBook.Domain.Entitites;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Domain.Entitites
+namespace Carbook.Domain.Entitites
 {
     public class Car
     {
@@ -22,10 +24,10 @@ namespace UdemyCarBook.Domain.Entitites
         public List<CarFeature> CarFeatures { get; set; }
         public List<CarDescription> CarDescriptions { get; set; }
         public List<CarPricing> CarPricings { get; set; }
-        //public List<RentACar> RentACars { get; set; }
-        //public List<RentACarProcess> RentACarProcesses { get; set; }
-        //public List<Reservation> Reservations { get; set; }
-        //public List<Review> Reviews { get; set; }
+        public List<RentACar> RentACars { get; set; }
+        public List<RentACarProcess> RentACarProcesses { get; set; }
+        public List<Reservation> Reservations { get; set; }
+        public List<Review> Reviews { get; set; }
 
 
 

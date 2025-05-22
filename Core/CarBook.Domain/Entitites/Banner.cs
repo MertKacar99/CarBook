@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Domain.Core
+namespace Carbook.Domain.Core
 {
     public class Banner
     {

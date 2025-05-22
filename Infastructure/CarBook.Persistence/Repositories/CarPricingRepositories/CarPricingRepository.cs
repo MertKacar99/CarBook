@@ -8,9 +8,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UdemyCarBook.Domain.Entitites;
+ 
+using Carbook.Domain.Entitites;
 
-namespace UdemyCarBook.Persistence.Repositories.CarPricingRepositories
+namespace CarBook.Persistence.Repositories.CarPricingRepositories
 {
     public class CarPricingRepository : ICarPricingRepository
     {

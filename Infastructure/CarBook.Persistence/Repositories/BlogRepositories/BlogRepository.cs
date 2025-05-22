@@ -1,5 +1,6 @@
-﻿using CarBook.Application.Interfaces.BlogInterfaces;
-using CarBook.Domain.Entitites;
+﻿using Carbook.Domain.Entitites;
+using CarBook.Application.Interfaces.BlogInterfaces;
+ 
 using CarBook.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using System;

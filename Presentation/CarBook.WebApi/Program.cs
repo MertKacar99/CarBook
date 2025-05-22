@@ -11,7 +11,7 @@ using CarBook.Application.Interfaces.CarInterfaces;
 using CarBook.Application.Interfaces.CarPricingInterfaces;
 using CarBook.Application.Interfaces.TagCloudInterfaces;
 using CarBook.Application.Services;
-using CarBook.Domain.Entitites;
+ 
 using CarBook.Persistence.Context;
 using CarBook.Persistence.Repositories;
 using CarBook.Persistence.Repositories.BlogRepositories;
@@ -19,7 +19,21 @@ using CarBook.Persistence.Repositories.CarRepositories;
 using CarBook.Persistence.Repositories.CommentRepositories;
 using CarBook.Persistence.Repositories.TagCloudRepositories;
 using Microsoft.EntityFrameworkCore;
-using UdemyCarBook.Persistence.Repositories.CarPricingRepositories;
+using CarBook.Persistence.Repositories.CarPricingRepositories;
+using Carbook.Domain.Entitites;
+using CarBook.Persistence.Repositories.CarFeatureRepositories;
+using CarBook.Persistence.Repositories.CarDescriptionRepositories;
+using CarBook.Application.Interfaces.RentACarInterfaces;
+using CarBook.Persistence.Repositories.RentACarRepositories;
+using CarBook.Domain.Entitites;
+using CarBook.Domain.Entities;
+using Autofac.Core;
+using CarBook.Application.Interfaces.CarDescriptionInterfaces;
+using CarBook.Application.Interfaces.CarFeatureInterfaces;
+using CarBook.Application.Interfaces.ReviewInterfaces;
+using CarBook.Application.Interfaces.StatisticsInterfaces;
+using CarBook.Persistence.Repositories.ReviewRepositories;
+using CarBook.Persistence.Repositories.StatisticsRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,11 +45,18 @@ builder.Services.AddDbContext<CarBookContext>(options =>
 
 // Add services to the container.
 builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
-builder.Services.AddScoped(typeof(ICarRepository),typeof(CarRepository));
-builder.Services.AddScoped(typeof(IBlogRepository),typeof(BlogRepository));
-builder.Services.AddScoped(typeof(ITagCloudRepository),typeof(TagCloudRepository));
-builder.Services.AddScoped(typeof(ICarPricingRepository),typeof(CarPricingRepository));
-builder.Services.AddScoped(typeof(IGenericRepository<Comment>),typeof(CommentRepository));
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped(typeof(ICarRepository), typeof(CarRepository));
+builder.Services.AddScoped(typeof(IStatisticsRepository), typeof(StatisticsRepository));
+builder.Services.AddScoped(typeof(IBlogRepository), typeof(BlogRepository));
+builder.Services.AddScoped(typeof(ICarPricingRepository), typeof(CarPricingRepository));
+builder.Services.AddScoped(typeof(ITagCloudRepository), typeof(TagCloudRepository));
+builder.Services.AddScoped(typeof(IRentACarRepository), typeof(RentACarRepository));
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(CommentRepository<>));
+builder.Services.AddScoped(typeof(ICarFeatureRepository), typeof(CarFeatureRepository));
+builder.Services.AddScoped(typeof(ICarDescriptionRepository), typeof(CarDescriptionRepository));
+builder.Services.AddScoped(typeof(IReviewRepository), typeof(ReviewRepository));
+
 //builder.Services.AddScoped(typeof(IGenericRepository<>),typeof(CommentRepository<>));
 
 
@@ -91,6 +112,8 @@ builder.Services.AddScoped<CreateContactCommandHandler>();
 builder.Services.AddScoped<UpdateContactCommandHandler>();
 builder.Services.AddScoped<RemoveContactCommandHandler>();
 
+//User
+ 
 // Mediator service 
 
 builder.Services.AddApplicationService(builder.Configuration);

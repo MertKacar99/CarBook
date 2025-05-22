@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Domain.Entitites
+namespace Carbook.Domain.Entitites
 {
     public class FooterAddress
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBook.Domain.Entitites
+namespace Carbook.Domain.Entitites
 {
     public class Author
     {

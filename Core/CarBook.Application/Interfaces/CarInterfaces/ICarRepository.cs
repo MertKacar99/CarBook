@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UdemyCarBook.Domain.Entitites;
+using Carbook.Domain.Entitites;
 
 namespace CarBook.Application.Interfaces.CarInterfaces
 {
@@ -11,6 +11,7 @@ namespace CarBook.Application.Interfaces.CarInterfaces
     {
         List<Car> GetCarsListWithBrands();
         List<Car> GetLast5CarsWithBrands();
+        int  GetCarCount();
        
 
     }

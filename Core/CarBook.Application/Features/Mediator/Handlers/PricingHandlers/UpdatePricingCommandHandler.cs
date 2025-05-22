@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UdemyCarBook.Domain.Entitites;
+using Carbook.Domain.Entitites;
 
 namespace CarBook.Application.Features.Mediator.Handlers.PricingHandlers
 {
@@ -23,6 +23,7 @@ namespace CarBook.Application.Features.Mediator.Handlers.PricingHandlers
         {
             var value = await _repository.GetByIdAsync(request.PricingID);
             value.Name = request.Name;
+            
             await _repository.UpdateAsync(value);
         }
     }

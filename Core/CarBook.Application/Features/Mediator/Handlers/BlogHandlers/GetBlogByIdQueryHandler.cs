@@ -1,16 +1,18 @@
-﻿using CarBook.Application.Features.Mediator.Queries.BlogQueries;
+﻿using Carbook.Application.Features.Mediator.Queries.BlogQueries;
 using CarBook.Application.Features.Mediator.Results.BlogResults;
 using CarBook.Application.Interfaces;
-using CarBook.Domain.Entitites;
+
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UdemyCarBook.Domain.Entitites;
+using Carbook.Domain.Entitites;
+using CarBook.Application.Features.Mediator.Queries.BlogQueries;
+using Carbook.Application.Features.Mediator.Results.BlogResults;
 
-namespace CarBook.Application.Features.Mediator.Handlers.BlogHandlers
+namespace Carbook.Application.Features.Mediator.Handlers.BlogHandlers
 {
     public class GetAuthorByIdQueryHandler : IRequestHandler<GetBlogByIdQuery, GetBlogByIdQueryResult>
     {

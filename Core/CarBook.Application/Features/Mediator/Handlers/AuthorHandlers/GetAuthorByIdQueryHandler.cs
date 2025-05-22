@@ -1,14 +1,15 @@
 ﻿using CarBook.Application.Features.Mediator.Queries.AuthorQueries;
 using CarBook.Application.Features.Mediator.Results.AuthorResults;
 using CarBook.Application.Interfaces;
-using CarBook.Domain.Entitites;
+
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UdemyCarBook.Domain.Entitites;
+using Carbook.Domain.Entitites;
+using Carbook.Application.Features.Mediator.Results.AuthorResults;
 
 namespace CarBook.Application.Features.Mediator.Handlers.AuthorHandlers
 {

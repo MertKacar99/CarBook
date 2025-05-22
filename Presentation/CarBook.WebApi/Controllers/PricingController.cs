@@ -1,4 +1,5 @@
-﻿using CarBook.Application.Features.Mediator.Commands.PricingCommands;
+﻿
+using CarBook.Application.Features.Mediator.Commands.PricingCommands;
 using CarBook.Application.Features.Mediator.Queries.PricingQueries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -25,7 +26,7 @@ namespace CarBook.WebApi.Controllers
             return Ok(values);
         }
 
-        [HttpPost("{id}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetPricing(int id)
         {
             var value = await _mediator.Send(new GetPricingByIdQuery(id));
@@ -48,7 +49,7 @@ namespace CarBook.WebApi.Controllers
             return Ok("fiyat Silindi");
         }
 
-         
+        [HttpPut]
         public async Task<IActionResult> UpdatePricing(UpdatePricingCommand command)
         {
             await _mediator.Send(command);

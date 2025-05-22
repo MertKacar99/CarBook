@@ -68,10 +68,10 @@ namespace Carbook.WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> UpdatePricing(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var resposenMessage = await client.GetAsync($"https://localhost:7233/api/Pricing/{id}");
-            if (resposenMessage.IsSuccessStatusCode)
+            var responseMessage = await client.GetAsync($"https://localhost:7233/api/Pricing/{id}");
+            if (responseMessage.IsSuccessStatusCode)
             {
-                var jsonData = await resposenMessage.Content.ReadAsStringAsync();
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<UpdatePricingDto>(jsonData);
                 return View(values);
             }

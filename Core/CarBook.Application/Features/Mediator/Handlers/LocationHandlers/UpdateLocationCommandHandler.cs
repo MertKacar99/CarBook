@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UdemyCarBook.Domain.Entitites;
+using Carbook.Domain.Entitites;
 
 namespace CarBook.Application.Features.Mediator.Handlers.LocationHandlers
 {
@@ -14,8 +14,8 @@ namespace CarBook.Application.Features.Mediator.Handlers.LocationHandlers
     {
         private readonly IRepository<Location> _repository;
 
-        public UpdateLocationCommandHandler(IRepository<Location> repository
-            )
+        public UpdateLocationCommandHandler(IRepository<Location> repository )
+           
         {
             _repository = repository;
         }
