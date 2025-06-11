@@ -23,7 +23,8 @@ namespace CarBook.Application.Features.CQRS.Handlers.BannerHandlers
           var values =  await _bannerRepository.GetByIdAsync(query.BannerId);
           values.VideoDescription = query.VideoDescription;
           values.Title = query.Title;
-          values.Description = query.Description;
+          values.VideoUrl = query.VideoUrl;
+            values.Description = query.Description;
           await _bannerRepository.UpdateAsync(values);
           
         }
